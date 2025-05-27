@@ -14,6 +14,7 @@ import { ShowPaymentComponent } from './pages/show-payment/show-payment.componen
 import { OrderSummaryComponent } from './pages/order-summary/order-summary.component';
 import { PoliticaPrivacidadComponent } from './pages/politica-privacidad/politica-privacidad.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { InfoCookiesComponent } from './pages/info-cookies/info-cookies.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -31,6 +32,8 @@ const routes: Routes = [
   { path: 'user/order-summary', component: OrderSummaryComponent },
   { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
   { path: 'about-us', component: AboutUsComponent },
+  { path: 'cookies', component: InfoCookiesComponent },
+
 
 
 

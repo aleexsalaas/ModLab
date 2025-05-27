@@ -19,6 +19,7 @@ import { ShowPaymentComponent } from './pages/show-payment/show-payment.componen
 import { OrderSummaryComponent } from './pages/order-summary/order-summary.component';
 import { PoliticaPrivacidadComponent } from './pages/politica-privacidad/politica-privacidad.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { InfoCookiesComponent } from './pages/info-cookies/info-cookies.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     OrderSummaryComponent,
     PoliticaPrivacidadComponent,
     AboutUsComponent,
-    
+    InfoCookiesComponent,
+
   ],
   imports: [
     BrowserModule,
