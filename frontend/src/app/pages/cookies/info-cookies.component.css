@@ -1,0 +1,43 @@
+
+
+  .cookie-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    background-color: #5b16a6; /* morado */
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .cookie-container h1 {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cookie-container p {
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 1rem;
+    font-size: 0.9em;
+  }
+
+  .cookie-container a {
+    font-family: "Montserrat", sans-serif;
+    color: #ffd700;
+    text-decoration: none;
+  }
+
+  .cookie-container a:hover {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .cookie-container {
+      margin: 1.5rem;
+      padding: 1.5rem;
+    }
+  }
