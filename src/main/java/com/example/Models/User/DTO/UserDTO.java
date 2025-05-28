@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 public class UserDTO {
 
     @Id
-    @Column(name = "user_id")
+    @Column(name = "userId")
     private String userId;
 
     @Column(name = "first_name", nullable = false)
