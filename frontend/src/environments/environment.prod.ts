@@ -1,13 +1,11 @@
 export const environment = {
-    production: true,
-    apiUrl: 'http://modlabfront.onrender.com/modlab/User',
-    apiUrlShippingAddress: 'http://modlabfront.onrender.com/modlab/ShippingAddress',
-    apiUrlCpu: 'http://modlabfront.onrender.com/modlab/CPU',
-    apiUrlReview: 'http://modlabfront.onrender.com/modlab/Review',
-    apiUrlProduct: 'http://modlabfront.onrender.com/modlab/products',
-    apiUrlPaymentMethod: 'http://modlabfront.onrender.com/modlab/paymentMethod',
-    apiUrlOrder:'http://modlabfront.onrender.com/modlab/order',
-    apiUrlShopCart:'http://modlabfront.onrender.com/modlab/ShopCart',
- 
-  };
-  
+  production: true,
+  apiUrl: 'https://modlabback-h8qv.onrender.com/modlab/User',
+  apiUrlShippingAddress: 'https://modlabback-h8qv.onrender.com/modlab/ShippingAddress',
+  apiUrlCpu: 'https://modlabback-h8qv.onrender.com/modlab/CPU',
+  apiUrlReview: 'https://modlabback-h8qv.onrender.com/modlab/Review',
+  apiUrlProduct: 'https://modlabback-h8qv.onrender.com/modlab/products',
+  apiUrlPaymentMethod: 'https://modlabback-h8qv.onrender.com/modlab/paymentMethod',
+  apiUrlOrder: 'https://modlabback-h8qv.onrender.com/modlab/order',
+  apiUrlShopCart: 'https://modlabback-h8qv.onrender.com/modlab/ShopCart',
+};
