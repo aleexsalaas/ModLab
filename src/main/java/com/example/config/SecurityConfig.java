@@ -36,16 +36,16 @@ public class SecurityConfig {
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowedOrigins(List.of(
-            "https://modlabfront.onrender.com" // Tu frontend en Render
-            // ,"http://localhost:4200"        // Descomenta si quieres permitir localhost para desarrollo
+            "https://modlabfront.onrender.com"
+            // ,"http://localhost:4200"
         ));
         corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfiguration.setAllowedHeaders(List.of("*"));
         corsConfiguration.setAllowCredentials(true);
-    
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfiguration);
-    
+
         return new CorsFilter(source);
     }
 
@@ -55,24 +55,23 @@ public class SecurityConfig {
         JwtAuthenticationFilter jwtAuthenticationFilter = new JwtAuthenticationFilter(jwtTokenProvider);
 
         http
-            .cors(Customizer.withDefaults()) // Activa CORS con configuración personalizada
-            .csrf(csrf -> csrf.disable()) // Desactiva CSRF, ideal para JWT
+            .cors(Customizer.withDefaults())
+            .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers(HttpMethod.POST, "/modlab/User/login").permitAll() // Permitir login
+                .requestMatchers(HttpMethod.POST, "/modlab/User/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/modlab/User/users").permitAll()
-                .requestMatchers(HttpMethod.GET, "/modlab/CPU/**", "/modlab/CPU/cpus/{id}", "/modlab/User/*").permitAll()
+                // CORRECCIÓN AQUÍ: Añadimos explícitamente "/modlab/CPU"
+                .requestMatchers(HttpMethod.GET, "/modlab/CPU", "/modlab/CPU/**", "/modlab/User/*").permitAll()
                 .requestMatchers(HttpMethod.GET, "/modlab/Review/product/{productId}").permitAll()
                 .requestMatchers(HttpMethod.GET, "/modlab/products/**").permitAll()
-
                 .requestMatchers(HttpMethod.GET, "/generate-token").permitAll()
-                .requestMatchers(HttpMethod.POST, "/modlab/Review/**", "/modlab/ShippingAddress/**", "/modlab/paymentMethod/**", "/modlab/order/**").authenticated()  // Permitir registro
+                .requestMatchers(HttpMethod.POST, "/modlab/Review/**", "/modlab/ShippingAddress/**", "/modlab/paymentMethod/**", "/modlab/order/**").authenticated()
                 .requestMatchers(HttpMethod.DELETE, "/modlab/**").authenticated()
-                // Permitir registro
-                .requestMatchers("/modlab/ShippingAddress/**", "/address", "/address/add", "/profile", "/email/**", "/modlab/Review").authenticated() // Rutas protegidas
-                .anyRequest().authenticated() // Todas las demás rutas requieren autenticación
+                .requestMatchers("/modlab/ShippingAddress/**", "/address", "/address/add", "/profile", "/email/**", "/modlab/Review").authenticated()
+                .anyRequest().authenticated()
             )
-            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class); // Añadir el filtro JWT antes de la autenticación por nombre de usuario y contraseña
-    
+            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+
         return http.build();
     }
 }
