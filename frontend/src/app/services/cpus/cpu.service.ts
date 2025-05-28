@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CPU } from '../../models/Cpu/Cpu';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CPUService {
-  private apiUrl = 'http://localhost:8080/modlab/CPU'; // Ajusta el puerto si es necesario
+  private apiUrl = environment.apiUrlCpu; // Ajusta el puerto si es necesario
 
   constructor(private http: HttpClient) {}
 

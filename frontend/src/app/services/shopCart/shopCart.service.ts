@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { ShopCart } from '../../models/ShopCart/ShopCart';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopCartService {
 
-  private apiUrl = 'http://localhost:8080/modlab/ShopCart';
+  private apiUrl = environment.apiUrlShopCart;
 
   constructor(private http: HttpClient) {}
 

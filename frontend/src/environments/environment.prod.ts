@@ -5,6 +5,9 @@ export const environment = {
     apiUrlCpu: 'http://modlabfront.onrender.com/modlab/CPU',
     apiUrlReview: 'http://modlabfront.onrender.com/modlab/Review',
     apiUrlProduct: 'http://modlabfront.onrender.com/modlab/products',
-    apiUrlPaymentMethod: 'http://modlabfront.onrender.com/modlab/paymentMethod', 
+    apiUrlPaymentMethod: 'http://modlabfront.onrender.com/modlab/paymentMethod',
+    apiUrlOrder:'http://modlabfront.onrender.com/modlab/order',
+    apiUrlShopCart:'http://modlabfront.onrender.com/modlab/ShopCart',
+ 
   };
   
