@@ -23,7 +23,7 @@ export class AuthService {
   // Al iniciar sesión, almacenamos el email y el token
   login(email: string, password: string): Observable<string | null> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post<{ token: string }>('http://localhost:8080/modlab/User/login', { email, password }, { headers }).pipe(
+    return this.http.post<{ token: string }>('https://modlabback-h8qv.onrender.com/modlab/User/login', { email, password }, { headers }).pipe(
       map(response => {
         const token = response.token;
         if (token) {
