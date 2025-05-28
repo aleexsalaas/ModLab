@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap, catchError } from 'rxjs';
 import { User } from '../../models/User/User';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 
 const baseUrl = environment.apiUrl; // Usar la URL del entorno
 

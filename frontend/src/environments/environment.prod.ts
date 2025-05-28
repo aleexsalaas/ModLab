@@ -8,4 +8,6 @@ export const environment = {
   apiUrlPaymentMethod: 'https://modlabback-h8qv.onrender.com/modlab/paymentMethod',
   apiUrlOrder: 'https://modlabback-h8qv.onrender.com/modlab/order',
   apiUrlShopCart: 'https://modlabback-h8qv.onrender.com/modlab/ShopCart',
+  apiUrlOrderDetail:'http://modlabback-h8qv.onrender.com/modlab/orderdetail',
+
 };

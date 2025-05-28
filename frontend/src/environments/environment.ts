@@ -7,7 +7,8 @@ export const environment = {
     apiUrlProduct: 'http://localhost:8080/modlab/products',
     apiUrlPaymentMethod: 'http://localhost:8080/modlab/paymentMethod', 
     apiUrlOrder:'http://localhost:8080/modlab/order',
-    apiUrlShopCart:'http://localhost:8080/modlab/ShopCart'
+    apiUrlShopCart:'http://localhost:8080/modlab/ShopCart',
+    apiUrlOrderDetail:'http://localhost:8080/modlab/orderdetail',
  
   };
   

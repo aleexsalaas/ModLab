@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { OrderDetail } from '../../models/OrderDetail/OrderDetail';
+import { environment } from '../../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderDetailService {
-  private apiUrl = 'http://localhost:8080/modlab/orderdetail';
+  private apiUrl = environment.apiUrlOrderDetail;
 
   constructor(private http: HttpClient) {}
 
