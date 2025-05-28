@@ -35,14 +35,17 @@ public class SecurityConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowedOrigins(List.of("http://localhost:4200")); // Ajusta esto a tu dominio frontend
-        corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
+        corsConfiguration.setAllowedOrigins(List.of(
+            "https://modlabfront.onrender.com" // Tu frontend en Render
+            // ,"http://localhost:4200"        // Descomenta si quieres permitir localhost para desarrollo
+        ));
+        corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfiguration.setAllowedHeaders(List.of("*"));
         corsConfiguration.setAllowCredentials(true);
-
+    
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfiguration);
-
+    
         return new CorsFilter(source);
     }
 
@@ -62,7 +65,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/modlab/products/**").permitAll()
 
                 .requestMatchers(HttpMethod.GET, "/generate-token").permitAll()
-                .requestMatchers(HttpMethod.POST, "/modlab/Review/**", "modlab/ShippingAddress/**", "modlab/paymentMethod/**", "modlab/order/**").authenticated()  // Permitir registro
+                .requestMatchers(HttpMethod.POST, "/modlab/Review/**", "/modlab/ShippingAddress/**", "/modlab/paymentMethod/**", "/modlab/order/**").authenticated()  // Permitir registro
                 .requestMatchers(HttpMethod.DELETE, "modlab/**").authenticated()
                 // Permitir registro
                 .requestMatchers("/modlab/ShippingAddress/**", "/address", "/address/add", "/profile", "/email/**", "/modlab/Review").authenticated() // Rutas protegidas
