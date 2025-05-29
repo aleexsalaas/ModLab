@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "order_table", schema = "modlab")  // Evita palabra reservada SQL 'order'
+@Table(name = "order_table")  // Evita palabra reservada SQL 'order'
 public class OrderDTO {
 
     @Id

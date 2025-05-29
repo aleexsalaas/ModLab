@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "payment_method", schema = "modlab")
+@Table(name = "payment_method")
 public class PaymentMethodDTO {
 
     @Id

@@ -3,7 +3,7 @@ package com.example.Models.ShippingAddress.DTO;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "shipping_address", schema = "modlab")
+@Table(name = "shipping_address")
 public class ShippingAddressDTO {
 
     @Id
